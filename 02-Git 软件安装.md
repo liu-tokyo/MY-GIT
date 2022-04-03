@@ -47,7 +47,7 @@ http://mac.github.com/
 
 [PowerShell ドキュメント - PowerShell | Microsoft Docs](https://docs.microsoft.com/ja-jp/powershell/)
 
-查找 **PowerShell**的版本：
+**从Misrosoft Store中查找 `PowerShell`的版本：**
 
 ```bash
 C:\WINDOWS\system32>winget search powershell
@@ -76,7 +76,7 @@ AutomatedLab                    AutomatedLab.AutomatedLab           5.41.0      
 PowerShell Universal            IronmanSoftware.PowerShellUniversal 2.6.2                        winget
 ```
 
-安装PowerShell
+**安装PowerShell：**
 
 ```bash
 C:\Users\LIU VM>winget install Microsoft.PowerShell
