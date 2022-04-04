@@ -12,7 +12,7 @@
 
 2、配置邮箱：user@email
 
-> git config --global user.email “liuzhijun@hotmail.com”
+> git config --global user.email “liu@vip.com”
 
 3、配置密码
 
@@ -47,7 +47,7 @@
 ```bash
 [user]
         name = liu
-        email = liuzhijun@hotmail.com
+        email = liu@vip.com
 [credential]
         helper = store
 ```
