@@ -1,4 +1,4 @@
-# TortoiseGit 使用教程
+# TortoiseGit 应用安装及配置
 
 ## 1. 前言
 
