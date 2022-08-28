@@ -76,7 +76,7 @@
 
 - 双击开始安装，遇到【SSH客户端选择】画面时：
 
-  ![image-20220828074325437](C:\Users\KST_LIUZHIJUN\AppData\Roaming\Typora\typora-user-images\image-20220828074325437.png)
+  ![image-20220828074325437](images/image-20220828074325437.png)
 
   ※选择OpenSSH方式，保持和Git一致，不然后续会有不少烦恼。
 
@@ -84,7 +84,7 @@
 
 - 遇到如下画面的时候，暂停在这里，进行语言包的安装。
 
-  ![image-20220828025647180](C:\Users\KST_LIUZHIJUN\AppData\Roaming\Typora\typora-user-images\image-20220828025647180.png)
+  ![image-20220828025647180](images/image-20220828025647180.png)
 
   语言包安装接收后，点击Refresh按钮，就可以看到中文简体，选择后，继续安装。  
   也可以在安装结束之后，再安装语言包，然后在setting进行语言包设置。
@@ -93,7 +93,7 @@
 
 - 遇到如下画面是，填写用户信息：
 
-  ![image-20220828025930325](C:\Users\KST_LIUZHIJUN\AppData\Roaming\Typora\typora-user-images\image-20220828025930325.png)
+  ![image-20220828025930325](images/image-20220828025930325.png)
 
   配置用户信息，因为在Git安装结束之后，已经做了配置，这里不需要做特别的改变，直到安装结束。
 
@@ -109,7 +109,7 @@
 
    在空白处点击鼠标右键，选择 --> TortoiseGit --> Settings，然后就可以看到配置界面。
 
-   ![image-20220828030635043](C:\Users\KST_LIUZHIJUN\AppData\Roaming\Typora\typora-user-images\image-20220828030635043.png)
+   ![image-20220828030635043](images/image-20220828030635043.png)
 
 3. 点击【编辑全局.git/config】按钮，把如下内容增加到文件中：
 
@@ -148,15 +148,15 @@
 
    如果密钥尚未创建，则需要创建一个SSH Key，在任意文件夹下点击右键，选择 **Git GUI Here**。在弹出的程序中选择主菜单的【Help】→【Show SSH Key】：
 
-   ![image-20220828031642113](C:\Users\KST_LIUZHIJUN\AppData\Roaming\Typora\typora-user-images\image-20220828031642113.png)
+   ![image-20220828031642113](images/image-20220828031642113.png)
 
    如果没有Key，则点击“Generate Key”生成一个SSH Key：
 
-   ![image-20220828031758928](C:\Users\KST_LIUZHIJUN\AppData\Roaming\Typora\typora-user-images\image-20220828031758928.png)
+   ![image-20220828031758928](images/image-20220828031758928.png)
 
 如果一切顺利的话，可以在用户主目录里找到`.ssh`目录，里面有`id_rsa`和`id_rsa.pub`两个文件，这两个就是SSH Key的秘钥对，`id_rsa`是私钥，不能泄露出去，`id_rsa.pub`是公钥，可以放心地告诉任何人。（其他创建SSH Key方式：[通过Shell命令方式创建](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000)）
 
-![image-20220828031907434](C:\Users\KST_LIUZHIJUN\AppData\Roaming\Typora\typora-user-images\image-20220828031907434.png)
+![image-20220828031907434](images/image-20220828031907434.png)
 
 ### 5.2 添加 SSH 密钥到Git 服务器
 
@@ -171,7 +171,7 @@
 
 - 要克隆 GitHub 或 Gitlab 上的项目，先要获取对应远程存储库的路径（注意：此处使用 SSH URL 方式）：
 
-  ![image-20220828033004797](C:\Users\KST_LIUZHIJUN\AppData\Roaming\Typora\typora-user-images\image-20220828033004797.png)
+  ![image-20220828033004797](images/image-20220828033004797.png)
 
   个人自建的Gitlab的仓库地址：`git@gitlab.liu.com:liu/my-git.git`
 
@@ -179,7 +179,7 @@
 
 - 在本地文件夹的空白位置处，右击鼠标，在菜单中选择【Git克隆】：
 
-  ![image-20220828033310253](C:\Users\KST_LIUZHIJUN\AppData\Roaming\Typora\typora-user-images\image-20220828033310253.png)
+  ![image-20220828033310253](images/image-20220828033310253.png)
 
   把git 路径填写到URL，并选择本地文件目录，点击【确定】，弹出下载进度窗口。（服务器端至少要有一个文件，否则 pull的时候会报错 fatal: Couldn't find remote ref HEAD）
 
