@@ -196,14 +196,16 @@
    **Linux**：
 
    ```bash
-   $ nano /home/liu/.ssh/id_ed25519.pub
+   $ nano /home/<username>/.ssh/id_ed25519.pub
    ```
 
    **Windows**：
 
    ```bash
-   $ notepad /c/Users/liu/.ssh/id_ed25519.pub
+   $ notepad /c/Users/<username>/.ssh/id_ed25519.pub
    ```
+   
+   ※`<username>`是系统登录用户名。
 
 ### 3.2 配置私钥目录
 
@@ -223,9 +225,10 @@
   ```bash
   eval $(ssh-agent -s)
   ## ssh-add <directory to private SSH key>
-  ssh-add c:/Users/liu/.ssh/id_ed25519
+  ssh-add c:/Users/<username>/.ssh/id_ed25519
   ```
-
+  
+  ※`<username>`是系统登录用户名。
 
 只有如上追加了目录之后，该目录里面的数据在克隆、推送的时候，才不需要输入口令，否则必须输入口令。
 

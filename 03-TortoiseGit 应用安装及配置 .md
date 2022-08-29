@@ -165,7 +165,7 @@
   - **GitHub服务器：**登陆GitHub，【头像】→【Settings】→【SSH and GPG Keys】→【New SSH Key】，填入上一步的复制的SSHKey，然后【Add SSH Key】：
   - **Gitlab服务器：**登陆Gitlab，【头像】→【Preferences】→【SSH密钥】→【New SSH Key】，填入上一步的复制的SSHKey，然后【Add SSH Key】
 
-为什么GitHub需要SSH Key呢？因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送。
+为什么GitHub需要SSH Key呢？因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而Git支持SSH协议，所以，Github只要知道了你的公钥，就可以确认只有你自己才能推送。
 
 ### 5.3 取得Git仓库地址
 
