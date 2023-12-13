@@ -110,13 +110,13 @@
 
 1. 查看提交日志记录
 
-   ```
+   ```bash
    git log
    ```
 
 2. 回退本地仓库的本地分支到指定版本
 
-   ```
+   ```bash
    git reset --hard <HEAD/commitId/branch/tag>
    ```
 
@@ -124,7 +124,7 @@
 
    指令：`git push origin <HEAD/commitId/branch/tag> --force`
 
-   ```
+   ```bash
    git push -f
    git push -f origin HEAD
    ```
@@ -133,12 +133,12 @@
 
 > 回退到上次提交，不清除本地提交的代码
 
-例如：在main分支写了半天，然后 `git commit` 提交了 ，才发现 在 `main` 分支开发的。
+例如：在main分支写了半天，然后 `git commit` 提交了 ，才发现 在 `main` 分支开发的。或者是重新整理 Commit 内容的时候，比较有用。
 
 
 1. 查看提交日志记录
 
-   ```
+   ```bash
    git log
    ```
 
@@ -146,7 +146,7 @@
 
    指令：`git reset --soft <HEAD/commitId/branch/tag>`
 
-   ```
+   ```bash
    git reset --soft HEAD
    ```
 
@@ -156,7 +156,7 @@
 
    指令：` git push origin <HEAD/commitId/branch/tag> --force`
 
-   ```
+   ```bash
    git push -f
    ```
 
