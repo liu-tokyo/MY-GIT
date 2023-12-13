@@ -122,9 +122,9 @@
 
 1. Linux环境，打开一个终端。
 
-   如果是Windows环境，打开`Git bash`，能够自动找到ssh-keygen的路径。
+   如果是Windows环境，打开`Git bash`，能够自动找到`ssh-keygen`的路径。
 
-   ※一般来说，Git默认安装的话，ssh-keygen.exe存在于`C:\Program Files\Git\usr\bin\`目录下。
+   ※一般来说，Git默认安装的话，`ssh-keygen.exe`存在于`C:\Program Files\Git\usr\bin\`目录下。
 
 2. 键入`ssh-keygen -t`后跟键类型和可选注释。
 
@@ -478,7 +478,7 @@ Hosts是一个没有扩展名的系统文件，可以用记事本等工具打开
   | 命令        | 说明                                   | 备注 |
   | ----------- | -------------------------------------- | ---- |
   | `git init`  | 初始化仓库                             |      |
-  | `git clone` | 拷贝一份远程仓库，也就是下载一个项目。 | 〇   |
+  | `git clone` | 克隆一份远程仓库，也就是下载一个项目。 | 〇   |
 
 - 提交与修改
 
