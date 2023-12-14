@@ -1,8 +1,8 @@
 # Git作业仓库
 
-- Git 内部的三颗树 / Git's three trees
+- Git 内部的三颗树 `Git's three trees`
 
-  为了更好的理解 git reset 的作用，我们首先得理解Git内部的状态管理机制。一般来说，这些机制会被称为"Git's three trees"，也就是Git的三颗树。说树可能不太准确，因为他们并不是传统意义上的树的数据结构，而是基于节点和指针的数据结构。为了更好的说明这些机制，我们来新建一个Git仓库并做一些变更来观察这三颗”树“的变化。
+  为了更好的理解 `git reset` 的作用，我们首先得理解Git内部的状态管理机制。一般来说，这些机制会被称为 `Git's three trees`，也就是Git的三颗树。说树可能不太准确，因为他们并不是传统意义上的树的数据结构，而是基于节点和指针的数据结构。为了更好的说明这些机制，我们来新建一个Git仓库并做一些变更来观察这三颗”树“的变化。
 
   ```
   $ mkdir git_reset_test
@@ -17,11 +17,11 @@
   create mode 100644 reset_lifecycle_file
   ```
 
-  上面的例子中我们新建了一个仓库，并且添加了一个 reset_lifecycle_file 文件。此时，仓库有一个commit，commit的hash值是d386d86，内容是增加了 reset_lifecycle_file 文件。
+  上面的例子中我们新建了一个仓库，并且添加了一个 `reset_lifecycle_file` 文件。此时，仓库有一个`commit`，`commit`的hash值是`d386d86`，内容是增加了 `reset_lifecycle_file` 文件。
 
 ## 1. 工作目录 `The working directory`
 
-- 首先我们来查看的”树“是工作目录，工作目录与本地文件系统同步，代表对文件和目录中的内容所做的即时更改。
+- 首先我们来查看的`”树“`是工作目录，工作目录与本地文件系统同步，代表对文件和目录中的内容所做的即时更改。
 
   ```bash
   $ echo 'hello git reset' > reset_lifecycle_file
@@ -33,11 +33,11 @@
    modified: reset_lifecycle_file
   ```
 
-  在我们的demo仓库中，我们更改了 reset_lifecycle_file 文件，然后执行 git status 查看文件的变更。这些变更就是工作目录的一部分。`git status` 命令可以用于展示工作目录的改变。
+  在我们的`demo`仓库中，我们更改了 `reset_lifecycle_file` 文件，然后执行 `git status` 查看文件的变更。这些变更就是工作目录的一部分。`git status` 命令可以用于展示工作目录的改变。
 
 ## 2. 暂存索引 `Staging Index`
 
-下一颗介绍的”树“树是暂存索引，暂存索引追踪从工作目录通过 git add 命令添加的变更，这些变更将被用于下一次提交(commit)。暂存索引是Git内部一个复杂的缓存机制。通常来讲，Git会对用户隐藏暂存索引的实现。但是为了更加直接的观察到暂存索引的状态 。
+下一颗介绍的`”树“`是暂存索引，暂存索引追踪从工作目录通过 `git add` 命令添加的变更，这些变更将被用于下一次提交(commit)。暂存索引是Git内部一个复杂的缓存机制。通常来讲，Git会对用户隐藏暂存索引的实现。但是为了更加直接的观察到暂存索引的状态 。
 
 - 我们可以使用一个”鲜为人知的Git命令 `git ls-files -s`
 
@@ -46,9 +46,9 @@
   100644 e69de29bb2d1d6434b8b29ae775ad8c2e48c5391 0   reset_lifecycle_file
   ```
 
-  这里我们执行了 git ls-files -s(--stage)。如果不加-s / --stage 选项的话，git ls-files的输出只是文件的名字和路径，`-s / --stage` 选项可以为我们展示更多的在暂存索引里文件的元数据。这些元数据有暂存内容的`mode`，`object name`，还有`stage number`。这里我们更关心 `object name`，也就是第二个值(`e69de29bb2d1d6434b8b29ae775ad8c2e48c5391`)。这是一个标准的 Git 对象 `SHA-1` 哈希值，在这里他代表了文件的哈希。`Commit History` 存储它自己的对象 SHA，用于识别指向`commit`和`ref`的指针，而暂存索引具有自己的对象 SHA，用于跟踪索引中文件的版本。
+  这里我们执行了 `git ls-files -s(--stage)`。如果不加 `-s / --stage` 选项的话，`git ls-files`的输出只是文件的名字和路径，`-s / --stage` 选项可以为我们展示更多的在暂存索引里文件的元数据。这些元数据有暂存内容的`mode`，`object name`，还有`stage number`。这里我们更关心 `object name`，也就是第二个值(`e69de29bb2d1d6434b8b29ae775ad8c2e48c5391`)。这是一个标准的 Git 对象 `SHA-1` 哈希值，在这里他代表了文件的哈希。`Commit History` 存储它自己的对象 SHA，用于识别指向`commit`和`ref`的指针，而暂存索引具有自己的对象 SHA，用于跟踪索引中文件的版本。
 
-- 接下来，我们把 reset_lifecycle_file 添加进暂存索引
+- 接下来，我们把 `reset_lifecycle_file` 添加进暂存索引
 
   ```bash
   $ git add reset_lifecycle_file 
@@ -58,7 +58,7 @@
   modified: reset_lifecycle_file
   ```
 
-  这里我们通过 git add 把 `reset_lifecycle_file` 加入了暂存索引并使用 `git status` 查看状态。这里有很重要的一点，`git status` 并不是直接展示暂存索引的状态，而是暂存索引和`Commit History`之间的变更。
+  这里我们通过 `git add` 把 `reset_lifecycle_file` 加入了暂存索引并使用 `git status` 查看状态。这里有很重要的一点，`git status` 并不是直接展示暂存索引的状态，而是暂存索引和`Commit History`之间的变更。
 
 - 让我们来看看现在暂存索引长啥样
 
@@ -117,9 +117,9 @@
   $ echo 'changed content' >> reset_lifecycle_file
   ```
 
-  我们添加了一个新文件 new_file 并把它添加进了仓库，并且也修改了 reset_lifecycle_file 文件。有了这些变更，
+  我们添加了一个新文件 `new_file` 并把它添加进了仓库，并且也修改了 `reset_lifecycle_file` 文件。有了这些变更，
 
-- 我们用 git status 来看看仓库的状态。
+- 我们用 `git status` 来看看仓库的状态。
 
   ```bash
   $ git status
@@ -164,7 +164,7 @@
 
 ### --mixed
 
-`--mixed` 是默认的选项。这种模式下，引用指针会更新。暂存索引被重置到指定commit的状态，任何暂存索引未提交的变更都会被移动到工作目录中。
+`--mixed` 是默认的选项。这种模式下，引用指针会更新。暂存索引被重置到指定`commit`的状态，任何暂存索引未提交的变更都会被移动到工作目录中。
 
 - 继续上面的例子
 
@@ -216,7 +216,7 @@
 
 ### --soft
 
-当 我们传递--soft 选项时，引用指针被更新， 暂存索引和工作目录保持不变。 这种行为很难清楚地展示。
+当我们传递 `--soft` 选项时，引用指针被更新， 暂存索引和工作目录保持不变。 这种行为很难清楚地展示。
 
 - 继续我们的上面的 `demo`
 
@@ -262,13 +262,13 @@
 
   可以看到，我们执行了 `git reset --soft` 。 使用 `git status` 和 `git ls-files` 检查仓库状态发现没有任何变化，这正是预期的行为。 软重置只会重置`Commit History`。 默认情况下，使用 `HEAD` 作为目标提交调用 `git reset` 。 同时由于此时我们的 `Commit History` 已经在 `HEAD` 上，所以我们隐式地重置为 `HEAD` 并没有发生任何事情。
 
-- 为了更好地理解和利用 --soft 我们需要一个不是 HEAD 的目标提交。 我们在暂存索引中有 reset_lifecycle_file 可以提交。
+- 为了更好地理解和利用 --soft 我们需要一个不是 `HEAD` 的目标提交。 我们在暂存索引中有 `reset_lifecycle_file` 可以提交。
 
   ```bash
   $ git commit -m "prepend content to reset_lifecycle_file"
   ```
 
-- 此时，我们的仓库应该有三个提交，我们将回到第一次提交。 为此，我们需要第一个提交的 ID。 可以执行 git log 来查找该ID。
+- 此时，我们的仓库应该有三个提交，我们将回到第一次提交。 为此，我们需要第一个提交的 ID。 可以执行 `git log` 来查找该ID。
 
   ```bash
   $ git log
@@ -317,7 +317,7 @@
   100644 67cc52710639e5da6b515416fd779d0741e3762e 0 reset_lifecycle_file
   ```
 
-  上面的代码执行“git reset --soft”，还调用了 `git status` 和 `git ls-files` 组合命令用于输出仓库的状态。 我们可以检查仓库状态并且注意到一些有趣的结果。 首先， `git status` 表明对 `reset_lifecycle_file` 有修改，说明他们可以被提交到暂存索引。 其次， `git ls-files` 输入表明暂存索引没有改变，并保留了我们之前的 SHA `67cc52710639e5da6b515416fd779d0741e3762e`。
+  上面的代码执行 `git reset --soft`，还调用了 `git status` 和 `git ls-files` 组合命令用于输出仓库的状态。 我们可以检查仓库状态并且注意到一些有趣的结果。 首先， `git status` 表明对 `reset_lifecycle_file` 有修改，说明他们可以被提交到暂存索引。 其次， `git ls-files` 输入表明暂存索引没有改变，并保留了我们之前的 SHA `67cc52710639e5da6b515416fd779d0741e3762e`。
 
 - 为了进一步说明 git reset 做了什么，我们执行 `git log`
 
