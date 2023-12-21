@@ -1,20 +1,21 @@
-# TortoiseGit 应用安装及配置
+# TortoiseGit应用安装及配置
 
 ## 1. 前言
 
-　作为一个当前软件开发人员，不可能不知道Git。Git作为一个复杂的版本控制系统，命令之多，即使经常使用，一些命令也记不住，一般只记住几个常用的命令，不是所有使用Git命令行都是高效的。本教程不讲Git命令，而是先让你用上git，再去学习git。本教程应该称作TortoiseGit入门指南。因为下面要借助一个图形化的软件，TortoiseGit来操作git。用GUI（图形界面）再谈CLI（命令行），我相信这会更容易让人接受。  
-　别名：海龟Git、乌龟Git，我们小组习惯于叫“小王八”。  
-　TortoiseGit只能在Windows上使用，没有相应的Linux版本；不过好在大家搞开发，当前至少还都是使用Windows。
+作为一个当前软件开发人员，不可能不知道`Git`。`Git`作为一个复杂的版本控制系统，命令之多，即使经常使用，一些命令也记不住，一般只记住几个常用的命令，不是所有使用`Git`命令行都是高效的。本教程不讲Git命令，而是先让你用上`Git`，再去学习`Git`。本教程应该称作`TortoiseGit`入门指南。因为下面要借助一个图形化的软件，`TortoiseGit`来操作`git`。用GUI（图形界面）再谈CLI（命令行），我相信这会更容易让人接受。  
+
+- 别名：`海龟Git`、`乌龟Git`，我们小组习惯于叫 `小王八`。  
+- `TortoiseGit`只能在`Windows`上使用，没有相应的`Linux`版本；不过好在大家搞开发，当前至少还都是使用`Windows`。
 
 ## 2. TortoiseGit 简介
 
-- TortoiseGit 简称 tgit， 中文名海龟Git。TortoiseGit是一个开放的GIT版本控制系统的源客户端。
-- TortoiseGit 支持Winxp/vista/win7/Win10，提供有中文版支持。
-- TortoiseGit 可以恢复您的文件的旧版本，并研究如何以及合适改变了历史数据，谁改变了它。下面教程针对使用TortoiseGit 的用户。
+- `TortoiseGit` 简称 `tgit`， 中文名`海龟Git`。`TortoiseGit`是一个开放的GIT版本控制系统的源客户端。
+- `TortoiseGit` 支持`Winxp/vista/win7/Win10`，提供有中文版支持。
+- `TortoiseGit` 可以恢复您的文件的旧版本，并研究如何以及合适改变了历史数据，谁改变了它。下面教程针对使用`TortoiseGit` 的用户。
 
 ## 3. 应用下载及安装
 
-　TortoiseGit是在Git应用基础上的GUI版本，必须在安装Git之后，才能安装Tortoisegit。虽然Git自身也带有Git GUI，但是其实用性和TortoiseGit差距非常大，所以对于技术开发人员来说，强烈建议安装TortoiseGit，进行Git仓库的各种管理。确实见到非常喜欢CLI的朋友，喜欢命令操作，坚持不用TortoiseGit，另当别论。
+`TortoiseGit`是在Git应用基础上的GUI版本，必须在安装Git之后，才能安装`Tortoisegit`。虽然Git自身也带有`Git GUI`，但是其实用性和`TortoiseGit`差距非常大，所以对于技术开发人员来说，强烈建议安装`TortoiseGit`，进行Git仓库的各种管理。确实见到非常喜欢`CLI`的朋友，喜欢命令操作，坚持不用`TortoiseGit`，另当别论。
 
 ### 3.1 安装Git
 
@@ -74,16 +75,14 @@
 
 #### 3.2.2 SSH客户端选择
 
-- 双击开始安装，遇到【SSH客户端选择】画面时：
-
+- 双击开始安装，遇到【SSH客户端选择】画面时：  
   ![image-20220828074325437](images/image-20220828074325437.png)
 
   ※选择OpenSSH方式，保持和Git一致，不然后续会有不少烦恼。
 
 #### 3.2.3 应用语言选择
 
-- 遇到如下画面的时候，暂停在这里，进行语言包的安装。
-
+- 遇到如下画面的时候，暂停在这里，进行语言包的安装。  
   ![image-20220828025647180](images/image-20220828025647180.png)
 
   语言包安装接收后，点击Refresh按钮，就可以看到中文简体，选择后，继续安装。  
@@ -91,13 +90,10 @@
 
 #### 3.2.4 配置用户信息
 
-- 遇到如下画面是，填写用户信息：
-
+- 遇到如下画面是，填写用户信息：  
   ![image-20220828025930325](images/image-20220828025930325.png)
 
   配置用户信息，因为在Git安装结束之后，已经做了配置，这里不需要做特别的改变，直到安装结束。
-
-
 
 ## 4. 应用配置
 
@@ -109,11 +105,10 @@
 
 2. 启动配置界面：
 
-   在空白处点击鼠标右键，选择 --> TortoiseGit --> Settings，然后就可以看到配置界面。
-
+   在空白处点击鼠标右键，选择 --> TortoiseGit --> Settings，然后就可以看到配置界面。  
    ![image-20220828030635043](images/image-20220828030635043.png)
 
-3. 点击【编辑全局.git/config】按钮，把如下内容增加到文件中：
+3. 点击【编辑全局`.git/config`】按钮，把如下内容增加到文件中：
 
    ```yaml
    [credential]
@@ -129,9 +124,6 @@
    git config --global credential.helper store
    ```
    
-   
-
-
 
 ## 5. 使用示例 - SSH
 
@@ -148,17 +140,14 @@
 
 2. 创建SSH密钥   
 
-   如果密钥尚未创建，则需要创建一个SSH Key，在任意文件夹下点击右键，选择 **Git GUI Here**。在弹出的程序中选择主菜单的【Help】→【Show SSH Key】：
-
+   如果密钥尚未创建，则需要创建一个SSH Key，在任意文件夹下点击右键，选择 **Git GUI Here**。在弹出的程序中选择主菜单的【Help】→【Show SSH Key】：  
    ![image-20220828031642113](images/image-20220828031642113.png)
 
-   如果没有Key，则点击“Generate Key”生成一个SSH Key：
-
-   ![image-20220828031758928](images/image-20220828031758928.png)
-
-如果一切顺利的话，可以在用户主目录里找到`.ssh`目录，里面有`id_rsa`和`id_rsa.pub`两个文件，这两个就是SSH Key的秘钥对，`id_rsa`是私钥，不能泄露出去，`id_rsa.pub`是公钥，可以放心地告诉任何人。（其他创建SSH Key方式：[通过Shell命令方式创建](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000)）
-
-![image-20220828031907434](images/image-20220828031907434.png)
+   如果没有Key，则点击“Generate Key”生成一个SSH Key：  
+   ![image-20220828031758928](images/image-20220828031758928.png)  
+   
+- 如果一切顺利的话，可以在用户主目录里找到`.ssh`目录，里面有`id_rsa`和`id_rsa.pub`两个文件，这两个就是SSH Key的秘钥对，`id_rsa`是私钥，不能泄露出去，`id_rsa.pub`是公钥，可以放心地告诉任何人。（其他创建SSH Key方式：[通过Shell命令方式创建](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000)）  
+  ![image-20220828031907434](images/image-20220828031907434.png)
 
 ### 5.2 添加 SSH 密钥到Git 服务器
 
@@ -173,14 +162,12 @@
 
 - 要克隆 GitHub 或 Gitlab 上的项目，先要获取对应远程存储库的路径（注意：此处使用 SSH URL 方式）：
 
-  ![image-20220828033004797](images/image-20220828033004797.png)
-
+  ![image-20220828033004797](images/image-20220828033004797.png)  
   个人自建的Gitlab的仓库地址：`git@gitlab.liu.com:liu/my-git.git`
 
 ### 5.4 克隆Git仓库
 
-- 在本地文件夹的空白位置处，右击鼠标，在菜单中选择【Git克隆】：
-
+- 在本地文件夹的空白位置处，右击鼠标，在菜单中选择【Git克隆】：  
   ![image-20220828033310253](images/image-20220828033310253.png)
 
   把git 路径填写到URL，并选择本地文件目录，点击【确定】，弹出下载进度窗口。（服务器端至少要有一个文件，否则 pull的时候会报错 fatal: Couldn't find remote ref HEAD）
