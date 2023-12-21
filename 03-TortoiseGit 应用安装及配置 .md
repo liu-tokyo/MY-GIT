@@ -38,8 +38,8 @@
 - 配置如下：
 
   ```bash
-  git config --global user.name "liu zhijun"
-  git config --global user.email "zhijun_liu@hotmail.com"
+  git config --global user.name "xxx yyyzzz"
+  git config --global user.email "yyyzzz_xxx@hotmail.com"
   git config --global credential.helper store
   ```
 
@@ -163,7 +163,7 @@
 - 要克隆 GitHub 或 Gitlab 上的项目，先要获取对应远程存储库的路径（注意：此处使用 SSH URL 方式）：
 
   ![image-20220828033004797](images/image-20220828033004797.png)  
-  个人自建的Gitlab的仓库地址：`git@gitlab.liu.com:liu/my-git.git`
+  个人自建的Gitlab的仓库地址：`git@gitlab.xxx.com:xxx/my-git.git`
 
 ### 5.4 克隆Git仓库
 
