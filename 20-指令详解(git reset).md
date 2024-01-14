@@ -17,6 +17,16 @@
   ```
 
   撤销最后一次提交，并且强制推送到远程仓库。
+  
+- 无法直接合并的分支，可以按照 `commit-id` 逐个导入：
+
+  ```bash
+  git cherry-pick -x <commit-id>
+  ## 例如，commit-id 是 5dd4cc80006a7edb2e4a92a81780de8d91c48b27 的情况的拷贝
+  git cherry-pick -x 5dd4cc80006a7edb2e4a92a81780de8d91c48b27
+  ```
+
+  
 
 ### 1.1 回退到指定版本
 
