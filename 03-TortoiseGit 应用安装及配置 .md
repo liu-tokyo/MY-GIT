@@ -172,3 +172,14 @@
 
   把git 路径填写到URL，并选择本地文件目录，点击【确定】，弹出下载进度窗口。（服务器端至少要有一个文件，否则 pull的时候会报错 fatal: Couldn't find remote ref HEAD）
 
+## 6. 修改 SSH 客户端
+
+`ssh-keygen` 创建的密钥，`TortoiseGit` 中不能用。如果配置后 Git Bash 已经可以正常和 GIT 服务器通讯的话，需要把 `TortoiseGit` 的 SSH客户端进行修改。
+
+- `Settings` → `Network` 的右侧画面的 `ssh client` 修改如下：
+
+  ```
+  C:\Program Files\Git\usr\bin\ssh.exe
+  ```
+
+  ※ 这是 GIT 安装的默认位置，如果 GIT 不是默认安装，请正确找到 GIT 的安装位置。
