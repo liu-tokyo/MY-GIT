@@ -174,6 +174,8 @@
 
 ## 6. 修改 SSH 客户端
 
+### 6.1 使用 GIT 创建的密钥
+
 `ssh-keygen` 创建的密钥，`TortoiseGit` 中不能用。如果配置后 Git Bash 已经可以正常和 GIT 服务器通讯的话，需要把 `TortoiseGit` 的 SSH客户端进行修改。
 
 - `Settings` → `Network` 的右侧画面的 `ssh client` 修改如下：
@@ -183,3 +185,57 @@
   ```
 
   ※ 这是 GIT 安装的默认位置，如果 GIT 不是默认安装，请正确找到 GIT 的安装位置。
+
+### 6.2 创建 TortoiseGit 的密钥
+
+`TortoiseGit` 使用扩展名为 `ppk` 的密钥，而不是 `ssh-keygen` 生成的 `rsa` 密钥。
+
+也就是说使用 `ssh-keygen  -t rsa  -C "username@email.com"` 产生的密钥，`TortoiseGit` 中不能用。
+
+而基于`github`的开发必须要用到 `rsa` 密钥，因此需要用到`TortoiseGit`的`putty key generator`工具，来生成既适用于`github`的`rsa`密钥也适用于`TortoiseGit`的`ppk`密钥。
+
+以下是生成`ppk`密钥，并且在`TortoiseGit`中设置的步骤：
+
+1. 始程序菜单中，打开TortoiseGit，点击 PuTTYgen，在打开的窗口中点击Generate按钮，会出现绿色进度条，生成过程中可以多晃晃鼠标增加随机性。
+
+2. 生成之后复制生成的全部内容，窗口先留着不关闭。
+
+3. 在 代码管理网站，如github、码云。这里拿码云为例。布局都差不多。
+
+   点击右上角，修改资料——点击左侧的 ssh公钥——填写右侧的添加公钥——标题自拟，把第二步复制的代码粘贴到下面的公钥那里——点击确定。
+
+4. 返回到第二步的窗口，点击 **Save private key**  按钮保存为适用于TortoiseGit的私钥，扩展名为.ppk。
+
+5. 运行TortoiseGit开始菜单中的Pageant程序，程序启动后将自动停靠在任务栏中，双击该图标，弹出key管理列表。
+
+6. 在弹出的key管理列表中，点击add key,将第4步中保存的私钥（.ppk）文件加进来，关闭对话框即可。
+
+7. 回到项目目录下，右键——TortoiseGit——Settings——点击Remote，将第4步中保存的私钥（.ppk）文件加进来。
+
+   注意URL后面填的是 git仓库的 ssh地址。
+
+   完成后，右键可以直接pull和push操作了。
+
+### 6.3 补充：
+
+如果一开始是用git命令（ ssh-keygen   -t   rsa   -C   [邮箱] ），生成的公钥和密钥（ 比如 id_rsa 和 id_rsa.pub ）
+
+首先，把生成的公钥粘贴到 git远程仓库管理中心。接下来用ssh的方式连接远程仓库。
+
+有两种操作方式：
+
+1. 用 git命令
+
+   可以直接用命令“git  pull【仓库的ssh地址】【分支名称】”   这样拉取和推送
+
+2. 用 TortoiseGit 方式
+
+   需要将私钥转成 .ppk格式
+
+　　1）运行PuTTYgen，在Conversions菜单中点击Import key，选择一开始生成的私钥文件，比如 id_rsa文件。
+
+　　2）点击Save private key 按钮，将其保存为.ppk文件。
+
+　　3）打开Pageant，点击Add Key，选择前一步所保存的.ppk文件所在的位置即可。
+
+　　PuTTYGen 和 Pageant 都在开始菜单中的TortoiseGit文件夹下，可以找到。
