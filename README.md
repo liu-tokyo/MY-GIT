@@ -32,3 +32,8 @@
 
 - 打开`gitlab`，找到`Profile Settings`-->`SSH Keys`--->`Add SSH Key`，并把上一步中复制的内容粘贴到`Key`所对应的文本框，在Title对应的文本框中给这个`sshkey`设置一个名字，点击`Add key`按钮
 
+## 2. Github
+
+- 官方网站的仓库管理资料
+
+  https://docs.github.com/zh/repositories/creating-and-managing-repositories/deleting-a-repository
