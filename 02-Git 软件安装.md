@@ -409,6 +409,33 @@ Hosts是一个没有扩展名的系统文件，可以用记事本等工具打开
   
   查看Git数据目录的图标显示，如果没有发生变化，请重启下电脑，应该可以解决问题。
 
+## 6. Git bash 添加到鼠标右键
+
+利用如下 `reg` 文件，即可把 `Git bash` 添加到鼠标右键：  
+
+- `GitBashHere.reg`
+
+  ```
+  Windows Registry Editor Version 5.00
+  
+  [HKEY_CLASSES_ROOT\Directory\background\shell\git_shell]
+  @="Git Ba&sh Here"
+  "Icon"="C:\\Program Files\\Git\\git-bash.exe"
+  
+  [HKEY_CLASSES_ROOT\Directory\background\shell\git_shell\command]
+  @="\"C:\\Program Files\\Git\\git-bash.exe\" \"--cd=%v.\""
+  
+  [HKEY_CLASSES_ROOT\Directory\shell\git_shell]
+  @="Git Ba&sh Here"
+  "Icon"="C:\\Program Files\\Git\\git-bash.exe"
+  "LegacyDisable"=""
+  
+  [HKEY_CLASSES_ROOT\Directory\shell\git_shell\command]
+  @="\"C:\\Program Files\\Git\\git-bash.exe\" \"--cd=%1\""
+  ```
+  
+  
+
 ## 附1. Git指令操作
 
 指令主要是为了熟悉Git的各种动作而已，普通用户最好是采用GUI进行操作。
