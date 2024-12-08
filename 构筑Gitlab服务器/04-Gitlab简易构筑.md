@@ -24,17 +24,17 @@
 - 执行以下命令将 GitLab 包添加到存储库：
 
   ```bash
-  curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+  curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
   ```
 
 - 运行以下命令来安装 GitLab 包：  
   （密码“hogehoge”被传递到GITLAB_ROOT_PASSWORD并设置密码的初始值。）
 
   ```bash
-  sudo GITLAB_ROOT_PASSWORD="hogehoge" EXTERNAL_URL="http://192.168.137.61" apt install -y gitlab-ee
+  sudo GITLAB_ROOT_PASSWORD="hogehoge" EXTERNAL_URL="http://192.168.137.61" apt install -y gitlab-ce
   ```
 
-  
+  注意：要按照自己的环境变更 `GITLAB_ROOT_PASSWORD` 和 `EXTERNAL_URL` 的实际数值。
 
 ## 2. 用户口令
 
