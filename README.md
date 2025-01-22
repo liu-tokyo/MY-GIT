@@ -37,3 +37,8 @@
 - 官方网站的仓库管理资料
 
   https://docs.github.com/zh/repositories/creating-and-managing-repositories/deleting-a-repository
+
+## 3. 图片尺寸优化
+
+- Git保存时，可以在线采用如下在线工具进行优化，一般能够减小 50% 以上的大小  
+  https://tinypng.com/
