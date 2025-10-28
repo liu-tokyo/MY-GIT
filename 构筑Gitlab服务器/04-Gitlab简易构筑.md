@@ -6,6 +6,8 @@
 
 ## 1. Gitlab 安装
 
+### 1.1 安装指令
+
 - 执行以下命令，安装依赖包curl、openssh-server、ca-certificates：
 
   ```bash
@@ -35,6 +37,43 @@
   ```
 
   注意：要按照自己的环境变更 `GITLAB_ROOT_PASSWORD` 和 `EXTERNAL_URL` 的实际数值。
+
+### 1.2 安装失败处理
+
+- 安装显示 `E: Sub-process /usr/bin/dpkg returned an error code (1)` 的话，是安装过程中出现了重大失败，执行如下指令对问题包进行重新安装：
+
+  ```bash
+  sudo apt-get -f install
+  ```
+
+  有必要的话，针对 Gitlab 服务强行再设置：
+
+  ```bash
+  sudo dpkg --configure -a
+  ```
+
+### 1.3 状态确认
+
+- Gitlab 设置及服务的确认
+
+  ```bash
+  sudo gitlab-ctl reconfigure
+  ```
+
+- 服务状态确认
+
+  ```bash
+  sudo gitlab-ctl status
+  ```
+
+
+### 1.4 配置文件
+
+- 更改如下文件，即可完成针对服务配置的修改：
+
+  ```bash
+  /etc/gitlab/gitlab.rb
+  ```
 
 ## 2. 用户口令
 
